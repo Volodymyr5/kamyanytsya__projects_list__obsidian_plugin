@@ -1,6 +1,7 @@
 import esbuild from "esbuild";
 import process from "process";
 import { builtinModules } from 'node:module';
+import { sassPlugin } from "esbuild-sass-plugin";
 
 const banner =
 `/*
@@ -11,7 +12,7 @@ if you want to view the source, please visit the github repository of this plugi
 
 const prod = (process.argv[2] === "production");
 
-const context = await esbuild.context({
+const jsContext = await esbuild.context({
 	banner: {
 		js: banner,
 	},
@@ -41,9 +42,23 @@ const context = await esbuild.context({
 	minify: prod,
 });
 
+const cssContext = await esbuild.context({
+	entryPoints: ["styles.scss"],
+	bundle: false,
+	outfile: "styles.css",
+	plugins: [
+		sassPlugin({
+			type: "css",
+		}),
+	],
+	minify: prod,
+});
+
 if (prod) {
-	await context.rebuild();
+	await jsContext.rebuild();
+	await cssContext.rebuild();
 	process.exit(0);
 } else {
-	await context.watch();
+	await jsContext.watch();
+	await cssContext.watch();
 }

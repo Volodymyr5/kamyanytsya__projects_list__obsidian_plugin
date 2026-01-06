@@ -1,11 +1,9 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "kamyanytsya__projects_list__obsidian_plugin",
+	"name": "Projects List",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Display a sortable table of project files with metadata, flags, priorities, and task tracking.",
+	"author": "kamyanytsya",
 	"isDesktopOnly": false
 }

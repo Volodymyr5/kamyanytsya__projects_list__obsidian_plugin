@@ -1,0 +1,439 @@
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-size-base: 13px;
+$font-size-small: 12px;
+
+$color-white: #ffffff;
+$color-light-gray: #f8f9fa;
+$color-gray: #f1f3f5;
+$color-dark-gray: #e9ecef;
+$color-text: #212529;
+$color-text-light: #495057;
+$color-text-muted: #6c757d;
+$color-border: #dee2e6;
+$color-border-light: #f1f3f5;
+$color-border-dark: #e9ecef;
+
+$color-priority-2: rgba(33, 150, 243, 0.1);
+$color-priority-2-hover: rgba(33, 150, 243, 0.15);
+$color-priority-3: rgba(255, 193, 7, 0.1);
+$color-priority-3-hover: rgba(255, 193, 7, 0.15);
+$color-priority-4: rgba(255, 152, 0, 0.1);
+$color-priority-4-hover: rgba(255, 152, 0, 0.15);
+$color-priority-5: rgba(244, 67, 54, 0.1);
+$color-priority-5-hover: rgba(244, 67, 54, 0.15);
+$color-draft: #f5f5f5;
+$color-draft-hover: #eeeeee;
+
+$color-error-bg: #fff3cd;
+$color-error-border: #ffc107;
+$color-error-text: #856404;
+
+$color-dark-bg: #1e1e1e;
+$color-dark-header-bg-start: #2d2d2d;
+$color-dark-header-bg-end: #252525;
+$color-dark-border: #404040;
+$color-dark-text: #dcddde;
+$color-dark-text-muted: #9ca3af;
+$color-dark-hover: #2d2d2d;
+$color-dark-hover-light: #353535;
+$color-dark-sorted: #1e3a5f;
+$color-dark-sorted-text: #64b5f6;
+$color-dark-error-bg: #3e2723;
+$color-dark-error-border: #ff9800;
+$color-dark-error-text: #ffcc80;
+$width-col-index: 53px;
+$width-col-flag: 62px;
+$width-col-task-done: 70px;
+$width-col-task-total: 67px;
+$width-col-task-groups: 77px;
+$width-col-draft: 70px;
+$width-col-updated: 95px;
+
+.projects-list {
+	&__container {
+		margin: 1em 0;
+		overflow-x: auto;
+	}
+
+	&__table {
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: separate;
+		border-spacing: 0;
+		font-family: $font-family;
+		font-size: $font-size-base !important;
+		background-color: $color-white;
+		border-radius: 8px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	&__header {
+		background: linear-gradient(to bottom, $color-light-gray 0%, $color-gray 100%);
+		border-bottom: 1px solid $color-border;
+	}
+
+	&__header-cell {
+		padding: 5px 12px;
+		text-align: left;
+		font-weight: 600;
+		color: $color-text-light;
+		white-space: nowrap;
+		border-right: 1px solid $color-border-dark;
+		cursor: pointer;
+		user-select: none;
+		transition: background-color 0.15s ease;
+		position: relative;
+
+		&:last-child {
+			border-right: none;
+		}
+
+		&--sortable {
+			&:hover {
+				background-color: $color-dark-gray;
+			}
+		}
+
+		&--sorted {
+			background-color: #e3f2fd;
+			color: #1976d2;
+			font-weight: bold;
+		}
+
+		&--col-index {
+			width: $width-col-index;
+		}
+		
+		&--col-flag {
+			width: $width-col-flag;
+		}
+
+		&--col-task-done {
+			width: $width-col-task-done;
+		}
+
+		&--col-task-total {
+			width: $width-col-task-total;
+		}
+		
+		&--col-task-groups {
+			width: $width-col-task-groups;
+		}
+		
+		&--col-draft {
+			width: $width-col-draft;
+		}
+
+		&--col-updated {
+			width: $width-col-updated;
+			white-space: nowrap;
+			text-align: center;
+		}
+
+		&--col-name {
+			// width: 45%;
+		}
+
+		&--col-path {
+			// width: 55%;
+		}
+	}
+
+	&__row {
+		border-bottom: 1px solid $color-border-light;
+		transition: background-color 0.15s ease;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color-light-gray;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&--priority-1 {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+
+		&--priority-2 {
+			background-color: $color-priority-2;
+
+			&:hover {
+				background-color: $color-priority-2-hover;
+			}
+		}
+
+		&--priority-3 {
+			background-color: $color-priority-3;
+
+			&:hover {
+				background-color: $color-priority-3-hover;
+			}
+		}
+
+		&--priority-4 {
+			background-color: $color-priority-4;
+
+			&:hover {
+				background-color: $color-priority-4-hover;
+			}
+		}
+
+		&--priority-5 {
+			background-color: $color-priority-5;
+
+			&:hover {
+				background-color: $color-priority-5-hover;
+			}
+		}
+
+		&--draft {
+			background-color: $color-draft !important;
+
+			&:hover {
+				background-color: $color-draft-hover !important;
+			}
+		}
+	}
+
+	&__cell {
+		padding: 5px 12px;
+		border-right: 1px solid $color-border-light;
+		color: $color-text;
+		vertical-align: middle;
+
+		&:last-child {
+			border-right: none;
+		}
+
+		&--path {
+			font-size: calc($font-size-base * 0.7) !important;
+			color: $color-text-muted;
+			word-break: break-word;
+			white-space: normal;
+		}
+
+		&--flag-1 {
+			opacity: 0.3;
+		}
+
+		&--col-index {
+			width: $width-col-index;
+		}
+
+		&--col-flag {
+			width: $width-col-flag;
+		}
+
+		&--col-task-done {
+			width: $width-col-task-done;
+		}
+
+		&--col-task-total {
+			width: $width-col-task-total;
+		}
+
+		&--col-task-groups {
+			width: $width-col-task-groups;
+		}
+
+		&--col-draft {
+			width: $width-col-draft;
+		}
+		&--col-updated {
+			width: $width-col-updated;
+			white-space: nowrap;
+			text-align: center;
+		}
+
+		&--col-name {
+			white-space: normal;
+			word-break: break-word;
+		}
+	}
+
+	&__pagination {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 12px;
+		padding: 8px 12px;
+		background-color: $color-light-gray;
+		border-radius: 6px;
+		font-size: $font-size-small;
+		color: $color-text-light;
+		gap: 12px;
+		flex-wrap: wrap;
+	}
+
+	&__page-size-select {
+		padding: 4px 8px;
+		border: 1px solid #ced4da;
+		border-radius: 4px;
+		background-color: $color-white;
+		font-size: $font-size-small;
+		cursor: pointer;
+		transition: border-color 0.15s ease;
+
+		&:hover {
+			border-color: #adb5bd;
+		}
+
+		&:focus {
+			outline: none;
+			border-color: #007bff;
+			box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+		}
+	}
+
+	&__page-info {
+		font-weight: 500;
+	}
+
+	&__nav-container {
+		display: flex;
+		gap: 4px;
+	}
+
+	&__nav-button {
+		padding: 4px 10px;
+		border: 1px solid #ced4da;
+		border-radius: 4px;
+		background-color: $color-white;
+		font-size: 14px;
+		cursor: pointer;
+		transition: all 0.15s ease;
+		color: $color-text-light;
+		min-width: 32px;
+
+		&:hover:not(&--disabled) {
+			background-color: $color-dark-gray;
+			border-color: #adb5bd;
+		}
+
+		&--disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		&:active:not(&--disabled) {
+			background-color: #dee2e6;
+			transform: scale(0.98);
+		}
+	}
+
+	&__error {
+		padding: 12px;
+		background-color: $color-error-bg;
+		border: 1px solid $color-error-border;
+		border-radius: 6px;
+		color: $color-error-text;
+		font-size: $font-size-base !important;
+	}
+}
+
+.theme-dark {
+	.projects-list {
+		&__table {
+			background-color: $color-dark-bg;
+			color: $color-dark-text;
+		}
+
+		&__header {
+			background: linear-gradient(to bottom, $color-dark-header-bg-start 0%, $color-dark-header-bg-end 100%);
+			border-bottom-color: $color-dark-border;
+		}
+
+		&__header-cell {
+			color: $color-dark-text;
+			border-right-color: $color-dark-border;
+
+			&--sortable {
+				&:hover {
+					background-color: $color-dark-hover-light;
+				}
+			}
+
+			&--sorted {
+				background-color: $color-dark-sorted;
+				color: $color-dark-sorted-text;
+			}
+		}
+
+		&__row {
+			border-bottom-color: $color-dark-hover;
+
+			&:hover {
+				background-color: $color-dark-hover;
+			}
+
+			&--priority-2 {
+				background-color: rgba(33, 150, 243, 0.2);
+			}
+
+			&--priority-3 {
+				background-color: rgba(255, 193, 7, 0.2);
+			}
+
+			&--priority-4 {
+				background-color: rgba(255, 152, 0, 0.2);
+			}
+
+			&--priority-5 {
+				background-color: rgba(244, 67, 54, 0.2);
+			}
+
+			&--draft {
+				background-color: $color-dark-hover !important;
+
+				&:hover {
+					background-color: $color-dark-hover-light !important;
+				}
+			}
+		}
+
+		&__cell {
+			color: $color-dark-text;
+			border-right-color: $color-dark-hover;
+
+			&--path {
+				color: $color-dark-text-muted;
+			}
+		}
+
+		&__pagination {
+			background-color: $color-dark-hover;
+			color: $color-dark-text;
+		}
+
+		&__page-size-select {
+			background-color: $color-dark-bg;
+			border-color: $color-dark-border;
+			color: $color-dark-text;
+
+			&:hover {
+				border-color: #555;
+			}
+		}
+
+		&__nav-button {
+			background-color: $color-dark-bg;
+			border-color: $color-dark-border;
+			color: $color-dark-text;
+
+			&:hover:not(&--disabled) {
+				background-color: $color-dark-hover-light;
+				border-color: #555;
+			}
+		}
+
+		&__error {
+			background-color: $color-dark-error-bg;
+			border-color: $color-dark-error-border;
+			color: $color-dark-error-text;
+		}
+	}
+}
+
