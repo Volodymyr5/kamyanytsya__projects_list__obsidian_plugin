@@ -1,7 +1,7 @@
 import { MarkdownRenderChild, MarkdownRenderer } from "obsidian";
 import { App } from "obsidian";
-import { FileUtils } from "../utils/fileUtils";
-import { MetadataService } from "../services/metadataService";
+import { FileUtils } from "../utils/FileUtils";
+import { MetadataService } from "../services/MetadataService";
 import { ProjectsTable } from "../components/ProjectsTable";
 import { ProjectFile } from "../types";
 

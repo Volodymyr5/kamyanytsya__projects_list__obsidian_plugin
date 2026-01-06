@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "kamyanytsya__projects_list__obsidian_plugin",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "This is Obsidian plugin for implement GTD functionality. For reviewing all existing projects. It is a part of Kamyanytsya Productivity System.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
@@ -10,8 +10,25 @@
 		"version": "node version-bump.mjs && git add manifest.json versions.json",
 		"lint": "eslint ."
 	},
-	"keywords": [],
-	"license": "0-BSD",
+	"keywords": [
+		"obsidian",
+		"obsidian-plugin",
+		"projects",
+		"task-management",
+		"project-management",
+		"gtd",
+		"kamyanytsya",
+		"kamyanytsya__projects_list__obsidian_plugin"
+	],
+	"author": "Volodymyr5",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Volodymyr5/kamyanytsya__projects_list__obsidian_plugin"
+	},
+	"bugs": {
+		"url": "https://github.com/Volodymyr5/kamyanytsya__projects_list__obsidian_plugin/issues"
+	},
 	"devDependencies": {
 		"@types/node": "^16.11.6",
 		"esbuild": "0.25.5",

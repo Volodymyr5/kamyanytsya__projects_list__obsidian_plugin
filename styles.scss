@@ -41,13 +41,13 @@ $color-dark-sorted-text: #64b5f6;
 $color-dark-error-bg: #3e2723;
 $color-dark-error-border: #ff9800;
 $color-dark-error-text: #ffcc80;
-$width-col-index: 53px;
-$width-col-flag: 62px;
-$width-col-task-done: 70px;
-$width-col-task-total: 67px;
-$width-col-task-groups: 77px;
-$width-col-draft: 70px;
-$width-col-updated: 95px;
+$width-col-index: 58px !important;
+$width-col-flag: 68px !important;
+$width-col-task-done: 75px !important;
+$width-col-task-total: 73px !important;
+$width-col-task-groups: 82px !important;
+$width-col-draft: 75px !important;
+$width-col-updated: 100px !important;
 
 .projects-list {
 	&__container {
@@ -154,38 +154,38 @@ $width-col-updated: 95px;
 		}
 
 		&--priority-1 {
-			background-color: rgba(255, 255, 255, 0.3);
+			background-color: rgba(255, 255, 255, 0.3) !important;
 		}
 
 		&--priority-2 {
-			background-color: $color-priority-2;
+			background-color: $color-priority-2 !important;
 
 			&:hover {
-				background-color: $color-priority-2-hover;
+				background-color: $color-priority-2-hover !important;
 			}
 		}
 
 		&--priority-3 {
-			background-color: $color-priority-3;
+			background-color: $color-priority-3 !important;
 
 			&:hover {
-				background-color: $color-priority-3-hover;
+				background-color: $color-priority-3-hover !important;
 			}
 		}
 
 		&--priority-4 {
-			background-color: $color-priority-4;
+			background-color: $color-priority-4 !important;
 
 			&:hover {
-				background-color: $color-priority-4-hover;
+				background-color: $color-priority-4-hover !important;
 			}
 		}
 
 		&--priority-5 {
-			background-color: $color-priority-5;
+			background-color: $color-priority-5 !important;
 
 			&:hover {
-				background-color: $color-priority-5-hover;
+				background-color: $color-priority-5-hover !important;
 			}
 		}
 
@@ -251,6 +251,11 @@ $width-col-updated: 95px;
 		&--col-name {
 			white-space: normal;
 			word-break: break-word;
+		}
+
+		&--completed {
+			color: #2e7d32 !important;
+			font-weight: 600;
 		}
 	}
 
@@ -370,19 +375,35 @@ $width-col-updated: 95px;
 			}
 
 			&--priority-2 {
-				background-color: rgba(33, 150, 243, 0.2);
+				background-color: rgba(33, 150, 243, 0.2) !important;
+
+				&:hover {
+					background-color: rgba(33, 150, 243, 0.3) !important;
+				}
 			}
 
 			&--priority-3 {
-				background-color: rgba(255, 193, 7, 0.2);
+				background-color: rgba(255, 193, 7, 0.2) !important;
+
+				&:hover {
+					background-color: rgba(255, 193, 7, 0.3) !important;
+				}
 			}
 
 			&--priority-4 {
-				background-color: rgba(255, 152, 0, 0.2);
+				background-color: rgba(255, 152, 0, 0.2) !important;
+
+				&:hover {
+					background-color: rgba(255, 152, 0, 0.3) !important;
+				}
 			}
 
 			&--priority-5 {
-				background-color: rgba(244, 67, 54, 0.2);
+				background-color: rgba(244, 67, 54, 0.2) !important;
+
+				&:hover {
+					background-color: rgba(244, 67, 54, 0.3) !important;
+				}
 			}
 
 			&--draft {
@@ -400,6 +421,10 @@ $width-col-updated: 95px;
 
 			&--path {
 				color: $color-dark-text-muted;
+			}
+
+			&--completed {
+				color: #66bb6a !important;
 			}
 		}
 

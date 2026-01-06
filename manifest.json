@@ -3,7 +3,8 @@
 	"name": "Projects List",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Display a sortable table of project files with metadata, flags, priorities, and task tracking.",
-	"author": "kamyanytsya",
+	"description": "This is Obsidian plugin for implement GTD functionality. For reviewing all existing projects. It is a part of Kamyanytsya Productivity System.",
+	"author": "Volodymyr5",
+	"authorUrl": "https://github.com/Volodymyr5",
 	"isDesktopOnly": false
 }

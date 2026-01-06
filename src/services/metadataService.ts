@@ -32,12 +32,12 @@ export class MetadataService {
 
 	private extractFlag(content: string): number | null {
 		const flagMatch = content.match(/#flag([1-5])/);
-		return flagMatch ? parseInt(flagMatch[1], 10) : null;
+		return flagMatch && flagMatch[1] ? parseInt(flagMatch[1], 10) : null;
 	}
 
 	private extractPriority(content: string): number | null {
 		const priorityMatch = content.match(/#priority([1-5])/);
-		return priorityMatch ? parseInt(priorityMatch[1], 10) : null;
+		return priorityMatch && priorityMatch[1] ? parseInt(priorityMatch[1], 10) : null;
 	}
 
 	private hasDraftTag(content: string): boolean {

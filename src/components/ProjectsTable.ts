@@ -1,7 +1,7 @@
 import { App, Component } from "obsidian";
 import { ProjectFile, SortableColumn, TableState } from "../types";
-import { SortUtils } from "../utils/sortUtils";
-import { FrontmatterUtils } from "../utils/frontmatterUtils";
+import { SortUtils } from "../utils/SortUtils";
+import { FrontmatterUtils } from "../utils/FrontmatterUtils";
 
 const COLUMN_CLASS_MAP: Record<SortableColumn, string> = {
 	"№": "projects-list__cell--col-index",
@@ -165,6 +165,8 @@ export class ProjectsTable extends Component {
 				row.addClass(`projects-list__row--priority-${file.priority}`);
 			}
 
+			const isCompleted = !file.isDraft && file.tasksTotal > 0 && file.tasksDone === file.tasksTotal;
+
 			row.addEventListener("click", () => {
 				this.app.workspace.openLinkText(file.file, "", false);
 			});
@@ -193,15 +195,21 @@ export class ProjectsTable extends Component {
 				cls: `projects-list__cell projects-list__cell--path ${COLUMN_CLASS_MAP["Path"]}`,
 			});
 
-			row.createEl("td", {
+			const tasksDoneCell = row.createEl("td", {
 				text: String(file.tasksDone),
 				cls: `projects-list__cell ${COLUMN_CLASS_MAP["Tasks Done"]}`,
 			});
+			if (isCompleted) {
+				tasksDoneCell.addClass("projects-list__cell--completed");
+			}
 
-			row.createEl("td", {
+			const tasksTotalCell = row.createEl("td", {
 				text: String(file.tasksTotal),
 				cls: `projects-list__cell ${COLUMN_CLASS_MAP["Tasks Total"]}`,
 			});
+			if (isCompleted) {
+				tasksTotalCell.addClass("projects-list__cell--completed");
+			}
 
 			row.createEl("td", {
 				text: String(file.tasksGroupsCount),
