@@ -1,6 +1,6 @@
 {
 	"id": "kamyanytsya__projects_list__obsidian_plugin",
-	"name": "Projects List",
+	"name": "GTD Projects List for Kamyanytsya",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "This is Obsidian plugin for implement GTD functionality. For reviewing all existing projects. It is a part of Kamyanytsya Productivity System.",
